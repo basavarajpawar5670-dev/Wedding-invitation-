@@ -5,112 +5,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Invitation</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
-
 <style>
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Georgia', serif;
     background: #ffffff;
     text-align: center;
+    color: #333;
     overflow-x: hidden;
-}
-
-/* Sparkle Animation */
-.sparkle {
-    position: fixed;
-    width: 5px;
-    height: 5px;
-    background: gold;
-    border-radius: 50%;
-    animation: fall 5s linear infinite;
-}
-
-@keyframes fall {
-    0% { transform: translateY(-10px); opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
-}
-
-.container {
-    padding: 20px;
 }
 
 /* Title */
 .title {
-    font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    background: linear-gradient(45deg, gold, #fff8dc, gold);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 3s infinite;
-}
-
-@keyframes shine {
-    0% { background-position: 0%; }
-    100% { background-position: 200%; }
-}
-
-/* Date Section */
-.date {
-    margin-top: 15px;
-    font-size: 18px;
+    font-size: 48px;
     font-weight: bold;
+    margin-top: 20px;
+    letter-spacing: 3px;
+}
+
+/* Date */
+.date {
+    font-size: 28px;
+    margin-top: 20px;
 }
 
 /* Countdown */
 #countdown {
-    margin: 10px 0;
-    font-size: 20px;
-    color: #333;
-}
-
-/* Names */
-.names {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 20px 0;
-    background: linear-gradient(45deg, #b76e79, #ff9aa2);
-    -webkit-background-clip: text;
-    color: transparent;
+    font-size: 22px;
+    margin-top: 10px;
+    color: #b8860b;
 }
 
 /* Message */
 .message {
-    font-size: 16px;
-    color: #000;
-    margin: 15px;
+    font-size: 20px;
+    margin: 30px;
+    line-height: 1.6;
+}
+
+/* Names */
+.names {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
 }
 
 /* Images */
-img {
-    width: 90%;
+.images img {
+    width: 220px;
     border-radius: 15px;
-    margin: 10px 0;
+    margin: 10px;
 }
 
 /* Venue */
 .venue {
-    font-size: 16px;
-    margin-top: 20px;
+    font-size: 22px;
+    margin-top: 30px;
 }
 
-/* Map Button */
-.map-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #b76e79;
-    color: white;
-    border-radius: 25px;
-    text-decoration: none;
-    margin-top: 10px;
+/* Map */
+.map iframe {
+    width: 90%;
+    height: 300px;
+    border-radius: 15px;
+    margin-top: 15px;
 }
 
 /* Closing */
 .closing {
-    margin-top: 25px;
-    font-size: 15px;
-    color: #444;
+    font-size: 20px;
+    margin: 40px;
+    font-style: italic;
+}
+
+/* Golden sparkle animation */
+.sparkle {
+    position: fixed;
+    top: -10px;
+    width: 6px;
+    height: 6px;
+    background: gold;
+    border-radius: 50%;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
 </style>
 </head>
@@ -119,73 +102,79 @@ img {
 
 <!-- Sparkles -->
 <script>
-for(let i=0;i<50;i++){
-    let s=document.createElement("div");
-    s.className="sparkle";
-    s.style.left=Math.random()*100+"%";
-    s.style.animationDuration=(Math.random()*3+2)+"s";
-    document.body.appendChild(s);
+for (let i = 0; i < 50; i++) {
+    let sparkle = document.createElement("div");
+    sparkle.className = "sparkle";
+    sparkle.style.left = Math.random() * 100 + "vw";
+    sparkle.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    sparkle.style.opacity = Math.random();
+    document.body.appendChild(sparkle);
 }
 </script>
 
-<div class="container">
+<!-- 1. Title -->
+<div class="title">WEDDING INVITATION</div>
 
-<div class="title">Wedding Invitation</div>
-
+<!-- 5. Date + Countdown -->
 <div class="date">
-    DATE <br>
+    DATE<br>
     April 26 & 27, 2026
 </div>
 
 <div id="countdown"></div>
 
+<!-- 2. Inviting Message -->
 <div class="message">
-    With joyful hearts and blessings of our families, we warmly invite you to celebrate our wedding.
+    With immense joy and heartfelt happiness, we invite you to join us in celebrating our wedding ceremony.
 </div>
 
+<!-- 3. Names -->
 <div class="names">
     PRADEEP KUMAR <br> & <br> SHILPA
 </div>
 
-<!-- Image -->
-<img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf" alt="Wedding Image">
+<!-- 4. Images -->
+<div class="images">
+    <img src="https://via.placeholder.com/220" alt="Couple Image">
+    <img src="https://via.placeholder.com/220" alt="Wedding Image">
+</div>
 
+<!-- 6. Venue -->
 <div class="venue">
-    <b>VENUE</b><br>
+    VENUE<br>
     Sri Jagadguru Renukacharya Convention Hall,<br>
     Chikkamagaluru
 </div>
 
-<a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Sri+Jagadguru+Renukacharya+Convention+Hall+Chikkamagaluru" target="_blank">
-    Open Location
-</a>
-
-<div class="closing">
-    We eagerly await your presence to bless us, share happiness, and make our special day unforgettable together.
+<div class="map">
+    <iframe src="https://share.google/whIdRTM6uf3iANONt"></iframe>
 </div>
 
+<!-- 7. Closing -->
+<div class="closing">
+    Your presence will add joy, blessings, and unforgettable memories to our special and cherished celebration.
 </div>
 
 <!-- Countdown Script -->
 <script>
-let countDownDate = new Date("April 26, 2026 00:00:00").getTime();
+const weddingDate = new Date("April 26, 2026 00:00:00").getTime();
 
-let x = setInterval(function() {
-  let now = new Date().getTime();
-  let distance = countDownDate - now;
+const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
 
-  let d = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let s = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("countdown").innerHTML =
-  d + "D " + h + "H " + m + "M " + s + "S ";
+    document.getElementById("countdown").innerHTML =
+        days + " D : " + hours + " H : " + minutes + " M : " + seconds + " S";
 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "Wedding Day!";
-  }
+    if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "The Wedding Has Begun!";
+    }
 }, 1000);
 </script>
 
