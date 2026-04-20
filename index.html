@@ -3,112 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation | Royal & Elegant</title>
+    <title>Wedding Invitation | Royal Gold Edition</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
         :root {
             --royal-gold: #D4AF37;
             --rose-gold: #B76E79;
         }
-        body { font-family: 'Montserrat', sans-serif; background-color: #ffffff; color: #000; overflow-x: hidden; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #ffffff; color: #1a1a1a; }
         .font-serif-royal { font-family: 'Cinzel', serif; }
-        .font-cursive { font-family: 'Great+Vibes', cursive; }
-        .text-gold { color: var(--royal-gold); }
-        .text-rose { color: var(--rose-gold); }
-        .border-gold { border-color: var(--royal-gold); }
-        .bg-gold-gradient { background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C); }
+        .font-cursive { font-family: 'Great Vibes', cursive; }
+        
+        /* Royal Gold Gradient for Names */
+        .text-gold-royal {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #BF953F, #FBF5B7, #AA771C) 1;
+        }
+
+        /* Animation for the cursor in typewriter */
+        #typewriter::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
 
-    <div class="max-w-2xl mx-auto px-6 py-12 text-center border-x border-gray-100 shadow-sm">
+    <div class="max-w-2xl mx-auto px-6 py-16 text-center border-x border-gray-50 shadow-sm">
         
-        <div class="mb-6 opacity-80">
+        <div class="mb-8">
             <img src="https://img.icons8.com/ios-filled/50/D4AF37/ganesh.png" alt="Lord Ganesh" class="mx-auto w-12 h-12">
         </div>
 
-        <h2 class="font-serif-royal text-sm tracking-[0.3em] uppercase mb-2 text-rose">The Wedding Invitation</h2>
-        <div class="h-[1px] w-24 bg-gold-gradient mx-auto mb-8"></div>
+        <h2 class="font-serif-royal text-sm tracking-[0.4em] uppercase mb-4 text-[#B76E79]">Wedding Invitation</h2>
+        <div class="h-[1px] w-32 bg-gray-200 mx-auto mb-10"></div>
 
-        <p class="italic text-gray-600 mb-10 text-lg">With joyful hearts, we invite you to celebrate the beginning of our forever.</p>
+        <p class="italic text-gray-500 mb-12 text-lg">Together with our families, we invite you to witness the union of two souls.</p>
 
-        <div class="mb-10">
-            <h1 class="font-serif-royal text-4xl md:text-5xl font-bold mb-2">GROOM NAME</h1>
-            <span class="font-cursive text-4xl text-gold">&</span>
-            <h1 class="font-serif-royal text-4xl md:text-5xl font-bold mt-2">BRIDE NAME</h1>
-        </div>
-
-        <div class="relative w-full aspect-[4/5] bg-gray-50 mb-12 rounded-t-full border-[12px] border-white shadow-2xl overflow-hidden mx-auto max-w-sm">
-            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800" alt="Couple" class="w-full h-full object-cover">
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 border-y border-gray-100 py-8">
-            <div class="space-y-2">
-                <h3 class="font-serif-royal font-bold text-rose">WHEN</h3>
-                <p class="font-medium">Saturday, December 12th, 2026</p>
-                <p class="text-sm text-gray-500">at 5:00 in the evening</p>
+        <div class="mb-12">
+            <h1 class="font-serif-royal text-5xl md:text-6xl font-bold text-gold-royal uppercase">Groom Name</h1>
+            <div class="my-4">
+                <span class="font-cursive text-5xl text-[#B76E79]">&</span>
             </div>
-            <div class="space-y-2">
-                <h3 class="font-serif-royal font-bold text-rose">WHERE</h3>
-                <p class="font-medium">The Royal Palace Grand Ballroom</p>
-                <p class="text-sm text-gray-500">123 Heritage Lane, Luxury Heights</p>
+            <h1 class="font-serif-royal text-5xl md:text-6xl font-bold text-gold-royal uppercase">Bride Name</h1>
+        </div>
+
+        <div class="relative w-72 h-96 mx-auto mb-16 rounded-t-full border-[10px] border-white shadow-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800" alt="Couple" class="w-full h-full object-cover">
+        </div>
+
+        <div class="mb-16">
+            <h3 class="font-serif-royal text-xl tracking-widest border-y border-gray-100 py-4 mb-6">DECEMBER 12, 2026</h3>
+            <p class="text-gray-600">Ceremony begins at 5:00 PM</p>
+        </div>
+
+        <div class="mb-16">
+            <h3 class="font-serif-royal text-rose-gold mb-4 tracking-widest text-sm">THE VENUE</h3>
+            <div class="w-full h-64 rounded-lg overflow-hidden border gold-border-gradient shadow-lg">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.123456789!2d77.5946!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzE3LjgiTiA3N8KwMzUnNDAuNiJF!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <p class="mt-4 font-serif-royal text-xs text-gray-400 uppercase">The Grand Palace, Heritage Square</p>
+        </div>
+
+        <div class="bg-gray-50 py-10 px-4 rounded-3xl mb-16 border border-gray-100">
+            <h4 class="font-serif-royal text-[10px] tracking-[0.3em] mb-8 text-gray-400">THE REVELRY BEGINS IN</h4>
+            <div class="flex justify-center gap-6">
+                <div><span id="days" class="text-3xl font-light block">00</span><small class="text-[9px] tracking-widest text-rose-gold">DAYS</small></div>
+                <div><span id="hours" class="text-3xl font-light block">00</span><small class="text-[9px] tracking-widest text-rose-gold">HOURS</small></div>
+                <div><span id="mins" class="text-3xl font-light block">00</span><small class="text-[9px] tracking-widest text-rose-gold">MINS</small></div>
+                <div><span id="secs" class="text-3xl font-light block text-gold-royal">00</span><small class="text-[9px] tracking-widest text-gold-royal">SECS</small></div>
             </div>
         </div>
 
-        <a href="https://maps.google.com" target="_blank" class="inline-block px-8 py-3 border border-gold text-gold hover:bg-gold-gradient hover:text-black transition-all duration-500 uppercase tracking-widest text-xs mb-16">
-            View on Map
-        </a>
-
-        <div class="bg-gray-50 p-8 rounded-lg mb-16">
-            <h4 class="font-serif-royal text-xs tracking-widest mb-6">COUNTING DOWN THE SECONDS</h4>
-            <div class="flex justify-center gap-4 text-center">
-                <div><span id="days" class="text-3xl font-light block">00</span><small class="text-[10px] text-gray-400">DAYS</small></div>
-                <div class="text-gold text-2xl">:</div>
-                <div><span id="hours" class="text-3xl font-light block">00</span><small class="text-[10px] text-gray-400">HOURS</small></div>
-                <div class="text-gold text-2xl">:</div>
-                <div><span id="mins" class="text-3xl font-light block">00</span><small class="text-[10px] text-gray-400">MINS</small></div>
-            </div>
-        </div>
-
-        <div class="mt-20 px-4 min-h-[100px]">
-            <p id="typewriter" class="font-cursive text-2xl text-gray-700"></p>
+        <div class="mt-20 px-6 min-h-[120px]">
+            <p id="typewriter" class="font-cursive text-3xl text-gray-800 leading-relaxed"></p>
         </div>
 
     </div>
 
     <script>
-        // --- Countdown Logic ---
+        // Countdown Logic
         const targetDate = new Date("Dec 12, 2026 17:00:00").getTime();
         
         setInterval(() => {
             const now = new Date().getTime();
             const diff = targetDate - now;
             
-            document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-            document.getElementById('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('mins').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById('mins').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById('secs').innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
         }, 1000);
 
-        // --- Typewriter Logic ---
-        const text = "We cannot wait to share our special day with you. Your presence is the greatest gift we could receive. With love, Groom & Bride.";
+        // Typewriter Logic
+        const text = "We cannot wait to celebrate this beautiful milestone with you. Your love and blessings are all we truly need. See you soon! — Groom & Bride.";
         let i = 0;
+        let started = false;
+
         function typeWriter() {
             if (i < text.length) {
                 document.getElementById("typewriter").innerHTML += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 50);
+                setTimeout(typeWriter, 60);
             }
         }
 
-        // Trigger typewriter when section is in view
         const observer = new IntersectionObserver((entries) => {
-            if(entries[0].isIntersecting) {
+            if(entries[0].isIntersecting && !started) {
+                started = true;
                 typeWriter();
-                observer.disconnect();
             }
-        });
+        }, { threshold: 0.5 });
+        
         observer.observe(document.getElementById('typewriter'));
     </script>
 </body>
