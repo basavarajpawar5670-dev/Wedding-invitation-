@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  background: linear-gradient(#fff3e0, #ffe0b2);
+}
+
+.card {
+  margin: 15px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 5px solid #d4af37;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+h1 { color: #8b0000; }
+.names { font-size: 24px; color: #b22222; }
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 10px;
+  background: #8b0000;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* Countdown */
+#countdown {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #333;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
+</audio>
+
+<div class="card">
+
+<h1>🙏 Wedding Invitation 🙏</h1>
+
+<p>With the blessings of elders</p>
+
+<div class="names">
+PRADEEP KUMAR B L <br> ❤️ <br> SHILPA B M
+</div>
+
+<p>ಪ್ರೇಮದ ಬಂಧದಲ್ಲಿ ಒಂದಾಗುತ್ತಿರುವ ಕ್ಷಣಕ್ಕೆ ಸಾಕ್ಷಿಯಾಗಿರಿ</p>
+
+<p>📅 April 26 & 27, 2026</p>
+
+<p>📍 Sri Jagadguru Renukacharya Convention Hall,<br>Chikkamagaluru</p>
+
+<a class="btn" href="https://maps.google.com" target="_blank">
+📍 View Location
+</a>
+
+</div>
+
+<!-- Photo Section -->
+<div class="card">
+<h2>Our Moments 📸</h2>
+<img src="https://via.placeholder.com/300" width="100%" style="border-radius:10px;">
+<p>(You can replace this photo)</p>
+</div>
+
+<!-- Countdown -->
+<div class="card">
+<h2>⏳ Countdown</h2>
+<div id="countdown"></div>
+</div>
+
+<!-- RSVP -->
+<div class="card">
+<h2>RSVP 📝</h2>
+<a class="btn" href="https://forms.google.com" target="_blank">
+Confirm Your Presence
+</a>
+</div>
+
+<script>
+// Countdown Timer
+var weddingDate = new Date("April 26, 2026 09:00:00").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = weddingDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+  var minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+
+  document.getElementById("countdown").innerHTML =
+  days + " days " + hours + " hrs " + minutes + " mins ";
+
+}, 1000);
+</script>
+
+</body>
+</html>
