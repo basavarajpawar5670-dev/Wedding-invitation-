@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Ganesh */
+.ganesh {
+    width: 60px;
+    margin-top: 20px;
+}
+
+/* Title */
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-top: 10px;
+}
+
+/* Welcome */
+.welcome {
+    margin: 15px auto;
+    max-width: 600px;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Names */
+.names {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+.names span {
+    color: #ffd700;
+}
+
+/* Image */
+.couple-img {
+    width: 280px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 25px rgba(255,255,255,0.2);
+}
+
+/* Details */
+.details {
+    margin: 15px;
+    font-size: 1.1rem;
+}
+
+/* Map button */
+.map-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #ffd700;
+    color: #000;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Analog Countdown */
+.clock {
+    margin: 40px auto;
+    width: 200px;
+    height: 200px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    position: relative;
+}
+
+.hand {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: #ffd700;
+    top: 50%;
+    transform-origin: 100%;
+}
+
+/* Typing */
+.typing {
+    margin: 40px auto;
+    width: 80%;
+    max-width: 600px;
+    font-size: 1.1rem;
+    border-right: 2px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Footer */
+footer {
+    margin: 40px 0;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Ganesh -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Ganesha_icon.png" class="ganesh">
+
+<!-- Title -->
+<h1 class="title">Wedding Invitation</h1>
+
+<!-- Welcome -->
+<p class="welcome">
+With the blessings of Lord Ganesha, we invite you to celebrate this joyous occasion with us.
+</p>
+
+<!-- Names -->
+<div class="names">
+<span>PRADEEP</span> ❤️ <span>SHILPA</span>
+</div>
+
+<!-- Image -->
+<img src="https://via.placeholder.com/300" class="couple-img">
+
+<!-- Details -->
+<div class="details">
+<p><strong>Date:</strong> April 26 & 27, 2026</p>
+<p><strong>Venue:</strong> Sri Jagadguru Renukacharya Convention Hall, Chikkamagaluru</p>
+
+<a href="https://maps.google.com" target="_blank" class="map-btn">View Location</a>
+</div>
+
+<!-- Analog Countdown -->
+<div class="clock">
+    <div id="second" class="hand"></div>
+    <div id="minute" class="hand"></div>
+    <div id="hour" class="hand"></div>
+</div>
+
+<!-- Typing Letter -->
+<div id="typingText" class="typing"></div>
+
+<footer>
+Made with ❤️ for a beautiful beginning
+</footer>
+
+<script>
+// Countdown Clock
+const weddingDate = new Date("April 26, 2026 09:00:00").getTime();
+
+function updateClock() {
+    const now = new Date().getTime();
+    const diff = weddingDate - now;
+
+    const seconds = Math.floor((diff / 1000) % 60);
+    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 12);
+
+    document.getElementById("second").style.transform = `rotate(${seconds * 6}deg)`;
+    document.getElementById("minute").style.transform = `rotate(${minutes * 6}deg)`;
+    document.getElementById("hour").style.transform = `rotate(${hours * 30}deg)`;
+}
+
+setInterval(updateClock, 1000);
+
+// Typing Effect
+const text = "We started our journey with love, faced challenges together, and now step into a new life as one. Your presence will make our day even more special.";
+
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typingText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+    }
+}
+
+typeWriter();
+</script>
+
+</body>
+</html>
