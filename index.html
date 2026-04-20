@@ -1,179 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  background: #fbfaf7;
-  font-family: 'Montserrat', sans-serif;
-  color: #222;
-  text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-/* Fade animation */
-.fade {
-  opacity: 0;
-  transform: translateY(25px);
-  animation: fadeUp 1.9s ease forwards;
-}
-.fade:nth-child(2){animation-delay:0.6s;}
-.fade:nth-child(3){animation-delay:0.9s;}
-.fade:nth-child(4){animation-delay:1.6s;}
-
-@keyframes fadeUp {
-  to { opacity:1; transform: translateY(0);}
+/* Ganesh */
+.ganesh {
+    width: 60px;
+    margin-top: 20px;
 }
 
-.container {
-  padding: 40px 20px;
-}
-
+/* Title */
 .title {
-  font-family: 'Playfair Display', serif;
-  font-size: 35px;
-  letter-spacing: 4px;
-  color: #c5a880;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-top: 10px;
 }
 
+/* Welcome */
+.welcome {
+    margin: 15px auto;
+    max-width: 600px;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Names */
 .names {
-  font-family: 'Playfair Display', serif;
-  font-size: 45px;
-  margin: 25px 0;
-  line-height: 1.6;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    font-weight: 700;
 }
 
-.divider {
-  width: 50px;
-  height: 2px;
-  background: #c5a880;
-  margin: 20px auto;
+.names span {
+    color: #ffd700;
 }
 
+/* Image */
+.couple-img {
+    width: 280px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 25px rgba(255,255,255,0.2);
+}
+
+/* Details */
 .details {
-  font-size: 30px;
-  line-height: 1.7;
-  margin-top: 10px;
+    margin: 15px;
+    font-size: 1.1rem;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 26px;
-  border-radius: 30px;
-  border: 1px solid #c5a880;
-  color: #c5a880;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.btn:hover {
-  background: #c5a880;
-  color: white;
+/* Map button */
+.map-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #ffd700;
+    color: #000;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-img {
-  width: 100%;
-  border-radius: 14px;
-  margin-top: 30px;
+/* Analog Countdown */
+.clock {
+    margin: 40px auto;
+    width: 200px;
+    height: 200px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    position: relative;
 }
 
-/* Countdown */
-#countdown {
-  margin-top: 10px;
-  font-size: 30px;
-  letter-spacing: 1px;
+.hand {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: #ffd700;
+    top: 50%;
+    transform-origin: 100%;
 }
 
-/* Music button */
-.music-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #c5a880;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 30px;
-  border: none;
+/* Typing */
+.typing {
+    margin: 40px auto;
+    width: 80%;
+    max-width: 600px;
+    font-size: 1.1rem;
+    border-right: 2px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Footer */
+footer {
+    margin: 40px 0;
+    font-size: 0.9rem;
+    opacity: 0.7;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Music -->
-<audio id="music" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3">
-</audio>
+<!-- Ganesh -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Ganesha_icon.png" class="ganesh">
 
-<div class="container">
+<!-- Title -->
+<h1 class="title">Wedding Invitation</h1>
 
-<div class="fade title">WEDDING INVITATION</div>
+<!-- Welcome -->
+<p class="welcome">
+With the blessings of Lord Ganesha, we invite you to celebrate this joyous occasion with us.
+</p>
 
-<div class="fade names">
-PRADEEP KUMAR B L <br>
-& <br>
-SHILPA B M
+<!-- Names -->
+<div class="names">
+<span>PRADEEP</span> ❤️ <span>SHILPA</span>
 </div>
 
-<div class="fade divider"></div>
+<!-- Image -->
+<img src="https://via.placeholder.com/300" class="couple-img">
 
-<div class="fade details">
-With the blessings of our families,<br>
-we invite you to celebrate our union
+<!-- Details -->
+<div class="details">
+<p><strong>Date:</strong> April 26 & 27, 2026</p>
+<p><strong>Venue:</strong> Sri Jagadguru Renukacharya Convention Hall, Chikkamagaluru</p>
+
+<a href="https://maps.google.com" target="_blank" class="map-btn">View Location</a>
 </div>
 
-<div class="fade details">
-DATE : April 26 & 27, 2026<br>
-  
-  Venue : Sri Jagadguru Renukacharya Convention Hall<br>
-Chikkamagaluru
+<!-- Analog Countdown -->
+<div class="clock">
+    <div id="second" class="hand"></div>
+    <div id="minute" class="hand"></div>
+    <div id="hour" class="hand"></div>
 </div>
 
-<div class="fade">
-<a class="btn" href="https://maps.app.goo.gl/2R4UYKA5yRY84P6C8?g_st=ac" target="_blank">
-View Location
-</a>
-</div>
+<!-- Typing Letter -->
+<div id="typingText" class="typing"></div>
 
-<div class="fade">
-<img src="im.jpg">
-</div>
-
-<div class="fade">
-<h3 class="title">COUNTDOWN</h3>
-<div id="countdown"></div>
-</div>
-
-<div class="fade details">
-We look forward to celebrating with you
-</div>
-
-</div>
-
-<button class="music-btn" onclick="playMusic()">🎶</button>
+<footer>
+Made with ❤️ for a beautiful beginning
+</footer>
 
 <script>
-var weddingDate = new Date("April 26, 2026 09:00:00").getTime();
+// Countdown Clock
+const weddingDate = new Date("April 26, 2026 09:00:00").getTime();
 
-setInterval(function() {
-  var now = new Date().getTime();
-  var d = weddingDate - now;
+function updateClock() {
+    const now = new Date().getTime();
+    const diff = weddingDate - now;
 
-  var days = Math.floor(d / (1000*60*60*24));
-  var hrs = Math.floor((d%(1000*60*60*24))/(1000*60*60));
-  var min = Math.floor((d%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((diff / 1000) % 60);
+    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 12);
 
-  document.getElementById("countdown").innerHTML =
-  days + " Days " + hrs + " Hrs " + min + " Min";
-}, 1000);
-
-function playMusic(){
-  document.getElementById("music").play();
+    document.getElementById("second").style.transform = `rotate(${seconds * 6}deg)`;
+    document.getElementById("minute").style.transform = `rotate(${minutes * 6}deg)`;
+    document.getElementById("hour").style.transform = `rotate(${hours * 30}deg)`;
 }
+
+setInterval(updateClock, 1000);
+
+// Typing Effect
+const text = "We started our journey with love, faced challenges together, and now step into a new life as one. Your presence will make our day even more special.";
+
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typingText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+    }
+}
+
+typeWriter();
 </script>
 
 </body>
