@@ -4,111 +4,175 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Invitation</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
-  font-family: 'Georgia', serif;
+  background: #fbfaf7;
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
   text-align: center;
-  background: linear-gradient(#fff3e0, #ffe0b2);
 }
 
-.card {
-  margin: 15px;
-  padding: 20px;
-  border-radius: 20px;
-  border: 5px solid #d4af37;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+/* Fade animation */
+.fade {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 1.5s ease forwards;
+}
+.fade:nth-child(2){animation-delay:0.4s;}
+.fade:nth-child(3){animation-delay:0.8s;}
+.fade:nth-child(4){animation-delay:1.2s;}
+
+@keyframes fadeUp {
+  to { opacity:1; transform: translateY(0);}
 }
 
-h1 { color: #8b0000; }
-.names { font-size: 24px; color: #b22222; }
+.container {
+  padding: 40px 20px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  letter-spacing: 3px;
+  color: #c5a880;
+}
+
+.names {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin: 25px 0;
+  line-height: 1.6;
+}
+
+.divider {
+  width: 50px;
+  height: 2px;
+  background: #c5a880;
+  margin: 20px auto;
+}
+
+.details {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 10px;
+}
 
 .btn {
   display: inline-block;
-  padding: 12px 20px;
-  margin: 10px;
-  background: #8b0000;
-  color: white;
-  border-radius: 10px;
+  margin-top: 25px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: 1px solid #c5a880;
+  color: #c5a880;
   text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #c5a880;
+  color: white;
+}
+
+img {
+  width: 100%;
+  border-radius: 14px;
+  margin-top: 30px;
 }
 
 /* Countdown */
 #countdown {
-  font-size: 20px;
   margin-top: 10px;
-  color: #333;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* Music button */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #c5a880;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Background Music -->
-<audio autoplay loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
+<!-- Music -->
+<audio id="music" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3">
 </audio>
 
-<div class="card">
+<div class="container">
 
-<h1>🙏 Wedding Invitation 🙏</h1>
+<div class="fade title">WEDDING INVITATION</div>
 
-<p>With the blessings of elders</p>
-
-<div class="names">
-PRADEEP KUMAR B L <br> ❤️ <br> SHILPA B M
+<div class="fade names">
+PRADEEP KUMAR B L <br>
+& <br>
+SHILPA B M
 </div>
 
-<p>ಪ್ರೇಮದ ಬಂಧದಲ್ಲಿ ಒಂದಾಗುತ್ತಿರುವ ಕ್ಷಣಕ್ಕೆ ಸಾಕ್ಷಿಯಾಗಿರಿ</p>
+<div class="fade divider"></div>
 
-<p>📅 April 26 & 27, 2026</p>
+<div class="fade details">
+With the blessings of our families,<br>
+we invite you to celebrate our union
+</div>
 
-<p>📍 Sri Jagadguru Renukacharya Convention Hall,<br>Chikkamagaluru</p>
+<div class="fade details">
+📅 April 26 & 27, 2026<br>
+📍 Sri Jagadguru Renukacharya Convention Hall<br>
+Chikkamagaluru
+</div>
 
+<div class="fade">
 <a class="btn" href="https://maps.google.com" target="_blank">
-📍 View Location
+View Location
 </a>
-
 </div>
 
-<!-- Photo Section -->
-<div class="card">
-<h2>Our Moments 📸</h2>
-<img src="https://via.placeholder.com/300" width="100%" style="border-radius:10px;">
-<p>(You can replace this photo)</p>
+<div class="fade">
+<img src="https://via.placeholder.com/500">
 </div>
 
-<!-- Countdown -->
-<div class="card">
-<h2>⏳ Countdown</h2>
+<div class="fade">
+<h3 class="title">COUNTDOWN</h3>
 <div id="countdown"></div>
 </div>
 
-<!-- RSVP -->
-<div class="card">
-<h2>RSVP 📝</h2>
-<a class="btn" href="https://forms.google.com" target="_blank">
-Confirm Your Presence
-</a>
+<div class="fade details">
+We look forward to celebrating with you
 </div>
 
+</div>
+
+<button class="music-btn" onclick="playMusic()">🎶</button>
+
 <script>
-// Countdown Timer
 var weddingDate = new Date("April 26, 2026 09:00:00").getTime();
 
-var x = setInterval(function() {
+setInterval(function() {
   var now = new Date().getTime();
-  var distance = weddingDate - now;
+  var d = weddingDate - now;
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-  var minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+  var days = Math.floor(d / (1000*60*60*24));
+  var hrs = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+  var min = Math.floor((d%(1000*60*60))/(1000*60));
 
   document.getElementById("countdown").innerHTML =
-  days + " days " + hours + " hrs " + minutes + " mins ";
-
+  days + " Days " + hrs + " Hrs " + min + " Min";
 }, 1000);
+
+function playMusic(){
+  document.getElementById("music").play();
+}
 </script>
 
 </body>
